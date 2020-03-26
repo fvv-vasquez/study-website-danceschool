@@ -3,6 +3,25 @@ body {
     font-family: Tahoma, Helvetica, sans-serif;
 }
 
+nav, #topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 img {
     display: block;
     margin-left: auto;
@@ -21,27 +40,74 @@ h2 {
     color: #6c07a5;
 }
 
+h4 {
+    text-align: center;
+    color: #b6b6b6;
+}
+
+form {
+    margin: 0 auto;
+    width: 800px;
+    padding: 20px;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #6c07a5;
+}
+
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    display: inline-block;
+    width: 250px;
+    text-align: right;
+}
+
+input, textarea {
+    width: 400px;
+    height: 35px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    border-color: #000;
+}
+
+textarea {
+    vertical-align: top;
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #cd91f0;
+    /* margin-left: 250px; */
+}
+
+button:hover {
+    background: #4d0278;
+}
+
 footer {
     font-size: 14px;
 }
 
-#topnav {
-    overflow: hidden;
-    background-color: #333;
-}
-
-#topnav a {
-    float: left;
-    color: #f2f2f2;
+#btn {
+    display: inline-block;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-#topnav a:hover {
-    background-color: #ddd;
-    color: black;
+    width:100%;
 }
 
 #active {
@@ -49,39 +115,10 @@ footer {
     color: white;
 }
 
-#btn {
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #cd91f0;
-}
-
-#info:hover {
-    background: #4d0278;
-}
-
-#info {
-    background-color: #cd91f0;
-}
-
-#faleConosco label {
-    font-size: 14pt;
-    font-weight: bold;
-    color: #6c07a5;
-    display: block;
-}
-
-#faleConosco input[type="submit"], #faleConosco input[type="reset"] {
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 20px;
+#movimente {
+    font-family: 'Bradley Hand', 'Times New Roman', Times, serif;
+    color: #ffffff;
+    text-align: center;
 }
 
 #rodape {
