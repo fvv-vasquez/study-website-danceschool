@@ -51,6 +51,30 @@ nav a:hover {
     color: black;
 }
 
+hr {
+    margin: 25px 0;
+    height: 1px;
+    border: 0;
+    background: gray;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, gray));
+}
+
+#img_marg {
+    margin-left: 0px;
+}
+
+#estudio {
+    float: right;
+    width: 250px;
+    height: 250px;
+}
+
+#mod {
+    float: left;
+    width: 450px;
+    height: 250px;
+}
+
 #active {
     background-color: #e396f2;
     color: white;
