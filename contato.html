@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<title>Elite - Academy of Dance</title>
 	<link rel="stylesheet" type="text/css" href="css/contato.css">
 </head>
@@ -49,11 +49,11 @@
 					<input type="tel" id="cel" name="contato_cel" pattern="[0-9]{11}" title="Insira seu número de celular com DDD"/>
 				</div>
 				<div>
-					<label for="ritmo">Modalidade de Interesse:</label>
+					<label for="ritmo">Modalidade:</label>
 					<input type="text" id="ritmo" name="contato_ritmo"/>
 				</div>
 				<div>
-					<label for="horario">Horário de Preferência:</label>
+					<label for="horario">Horário:</label>
 					<input type="text" id="horario" name="contato_horario"/>
 				</div>
 				<div>
@@ -76,23 +76,33 @@
 		</section>
 	</article>
 
-	<footer>
-		<ul id="rodape">
-			<h2>ATENDIMENTO</h2>
-			<h2>ENDEREÇO</h2>
-			<h2>CONTATO</h2>
-			<li>Segunda à Sexta</li>
-			<li>Elite - Academy of Dance</li>
-			<li>(11) 3085-4677</li>
-			<li>Das 09h às 22h</li>
-			<li>Rua Domingos de Moares, 763 - 3º Andar</li>
-			<li>(11) 95687-2559</li>
-			<li>Sábados</li>
-			<li>Vila Mariana</li>
-			<li>contato@eliteacademy.com.br</li>
-			<li>Das 10h às 15h</li>
-			<li>Em frente a linha lilás do metrô</li>
-		</ul>
+	<footer class="container grid grid-template-columns">
+		<div class="item">
+			<ul>
+				<h2>ATENDIMENTO</h2>
+				<li>Segunda à Sexta</li>
+				<li>Das 09h às 22h</li>
+				<li>Sábados</li>
+				<li>Das 10h às 15h</li>
+			</ul>
+		</div>
+		<div class="item">
+			<ul>
+				<h2>ENDEREÇO</h2>
+				<li>Elite - Academy of Dance</li>
+				<li>Rua Domingos de Moares, 763 - 3º Andar</li>
+				<li>Vila Mariana</li>
+				<li>Em frente a linha lilás do metrô</li>
+			</ul>
+		</div>
+		<div class="item">
+			<ul>
+				<h2>CONTATO</h2>
+				<li>(11) 3085-4677</li>
+				<li>(11) 95687-2559</li>
+				<li>contato@eliteacademy.com.br</li>
+			</ul>	
+		</div>	
 	</footer>
 </body>
 </html>
