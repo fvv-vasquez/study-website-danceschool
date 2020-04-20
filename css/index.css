@@ -50,7 +50,7 @@ hr {
     height: 1px;
     border: 0;
     background: gray;
-    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, gray));
+    background: -webkit-linear-gradient(left, white, gray, white);
 }
 
 #img_marg {
