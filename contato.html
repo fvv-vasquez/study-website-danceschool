@@ -3,7 +3,51 @@
 <head>
 	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<title>Elite - Academy of Dance</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="css/contato.css">
+
+	<script>
+		function sampleFunction() {
+			let name = document.getElementById("nome").value
+			let email = document.getElementById("email").value
+			let end = document.getElementById("end").value
+			let cel = document.getElementById("cel").value
+			let modalidades = document.getElementById("modalidades").value
+			let periodo = document.getElementById("periodo").value
+			let idade = document.getElementById("idade").value
+			let nivel = document.getElementById("nivel").value
+			let comentario = document.getElementById("comentario").value
+
+			var data = JSON.stringify({
+				"name": name,
+				"email": email,
+				"address": end,
+				"cellphone": cel,
+				"danceType": modalidades,
+				"schedule": periodo,
+				"age": parseInt(idade),
+				"level": nivel,
+				"comment": comentario
+			});
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.addEventListener("readystatechange", function() {
+			if(this.readyState === 4) {
+				console.log(this.responseText);
+			}
+			});
+
+			xhr.open("POST", "http://localhost:8080/saveContact");
+			xhr.setRequestHeader("Content-Type", "application/json");
+
+			xhr.send(data);			
+
+			document.getElementById("faleConoscoForm").submit();
+			alert("Agradecemos seu contato, em breve retornaremos!");
+		}
+	</script>
 </head>
 
 <body>
@@ -11,7 +55,7 @@
 		<nav id="topnav">
 			<a href="index.html">HOME</a>
 			<a href="#estudio">O ESTÚDIO</a>
-			<a href="#modalidades">MODALIDADES</a>
+			<a href="modalidades.html">MODALIDADES</a>
 			<a href="#horarios">HORÁRIOS</a>
 			<a href="#professores">PROFESSORES</a>
 			<a id="active" href="#contato">FALE CONOSCO</a>
@@ -31,7 +75,7 @@
 		<h4>Preencha o formulário abaixo ou envie um e-mail para: contato@eliteacademy.com.br</h4>
 		<br>
 		<section id="faleConosco">
-			<form action="#" method="POST">
+			<form action="#" method="POST" id="faleConoscoForm">
 				<div>
 					<label for="nome">Nome:</label>
 					<input type="text" id="nome" name="contato_nome"/>
@@ -49,12 +93,36 @@
 					<input type="tel" id="cel" name="contato_cel" pattern="[0-9]{11}" title="Insira seu número de celular com DDD"/>
 				</div>
 				<div>
-					<label for="ritmo">Modalidade:</label>
-					<input type="text" id="ritmo" name="contato_ritmo"/>
+					<label for="modalidades">Modalidade:</label>
+					<select id="modalidades" name="contato_modalidades">
+						<option value="selecione">Selecione</option>
+						<option value="ballet">Ballet</option>
+						<option value="contemporaneo">Contemporâneo</option>
+						<option value="indiana">Dança Indiana</option>
+						<option value="tribal">Dança Tribal</option>
+						<option value="danca_ventre">Dança do Ventre</option>
+						<option value="flamenco">Flamenco</option>
+						<option value="forro">Forró</option>
+						<option value="jazz">Jazz</option>
+						<option value="samba_rock">Samba Rock</option>
+						<option value="sapateado">Sapateado</option>
+						<option value="sertanejo">Sertanejo</option>
+						<option value="street">Street Dance</option>
+						<option value="tango">Tango</option>
+						<option value="zouk">Zouk</option>
+						<option value="zumba">Zumba</option>
+					</select>
 				</div>
 				<div>
-					<label for="horario">Horário:</label>
-					<input type="text" id="horario" name="contato_horario"/>
+					<label for="periodo">Período:</label>
+					<select id="periodo" name="contato_periodo">
+						<option value="selecione">Selecione</option>
+						<option value="manha">Manhã</option>
+						<option value="tarde">Tarde</option>
+						<option value="noite">Noite</option>
+						<option value="integral">Integral</option>
+						<option value="sabado">Sábado</option>
+					</select>
 				</div>
 				<div>
 					<label for="idade">Idade:</label>
@@ -62,14 +130,19 @@
 				</div>
 				<div>
 					<label for="nivel">Nível:</label>
-					<input type="text" id="nivel" name="contato_nivel"/>
+					<select id="nivel" name="contato_nivel">
+						<option value="selecione">Selecione</option>
+						<option value="iniciante">Iniciante</option>
+						<option value="intermediario">Intermediário</option>
+						<option value="avancado">Avançado</option>
+					</select>
 				</div>
 				<div>
 					<label for="cometario">Comentário:</label>
 					<textarea id="comentario"></textarea>
 				</div>
 				<div id="btn">
-					<button type="submit">Enviar</button>
+					<button type="submit" onclick="sampleFunction()">Enviar</button>
 					<button type="reset">Apagar</button>
 				</div>
 			</form>
