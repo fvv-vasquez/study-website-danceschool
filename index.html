@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<title>Elite - Academy of Dance</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
 	<header>
-		<div id="topnav">
+		<nav id="topnav">
 			<a id="active" href="#home">HOME</a>
 			<a href="#estudio">O ESTÚDIO</a>
-			<a href="#modalidades">MODALIDADES</a>
+			<a href="modalidades.html">MODALIDADES</a>
 			<a href="#horarios">HORÁRIOS</a>
 			<a href="#professores">PROFESSORES</a>
-			<a href="#contato">FALE CONOSCO</a>
-		</div>
+			<a href="contato.html">FALE CONOSCO</a>
+		</nav>
 
 		<figure>
 			<img src="img/logo.png" alt="Logo da Elite Academy of Dance">
@@ -28,23 +30,23 @@
 
 	<article>
 		<figure>
-	    	<img src="img/estudio.png" alt="Foto sobre o estudio" width="250px" height="250px" align="right">
+	    	<img id="estudio" src="img/estudio.png" alt="Foto sobre o estudio">
 		</figure>
 		
 		<h2>O ESTÚDIO</h2>
 		<p>Respiramos e vivemos dança. O Estúdio Elite - Academy of Dance nasceu com o propósito de levar o poder de transformação e libertação através da dança para todos. Com aulas leves e diversas modalidades para você experimentar, acolhemos todos os biotipos, gêneros e níveis. O importante aqui é ser feliz e livre para se descobrir! </p>
 		<p>Aqui, a dança acontece!</p>
-		<p margin-left="40px"><button id="btn">Conheça</button></p>
+		<p id="img_marg"><button id="btn">Conheça</button></p>
 		<hr>
 
 		<figure>
-	    	<img src="img/modalidades.png" alt="Foto sobre o estudio" width="450px" height="250px" align="left">
+	    	<img id="mod" src="img/modalidades.png" alt="Foto de Modalidades">
 		</figure>
 		
 		<h2>MODALIDADES</h2>
 		<ul id="modalidades">
 			<li>Ballet</li>
-			<li>Dança Contemporânea</li>
+			<li>Contemporâneo</li>
 			<li>Jazz</li>
 			<li>Tango</li>
 			<li>Forró</li>
@@ -52,10 +54,10 @@
 			<li>Dança do Ventre</li>
 			<li>Dança Tribal</li>
 			<li>Dança Indiana</li>
-			<li>Dança de Salão</li>
+			<li>Flamenco</li>
 			<li>Sertanejo</li>
 			<li>Street Dance</li>
-			<li>Dança Livre</li>
+			<li>Samba Rock</li>
 			<li>Zouk</li>
 			<li>Zumba</li>
 		</ul>	
@@ -63,23 +65,33 @@
 		<hr>
 	</article>
 
-	<footer>
-		<ul id="rodape">
-			<h2>ATENDIMENTO</h2>
-			<h2>ENDEREÇO</h2>
-			<h2>CONTATO</h2>
-			<li>Segunda à Sexta</li>
-			<li>Elite - Academy of Dance</li>
-			<li>(11) 3085-4677</li>
-			<li>Das 09h às 22h</li>
-			<li>Rua Domingos de Moares, 763 - 3º Andar</li>
-			<li>(11) 95687-2559</li>
-			<li>Sábados</li>
-			<li>Vila Mariana</li>
-			<li>contato@eliteacademy.com.br</li>
-			<li>Das 10h às 15h</li>
-			<li>Em frente a linha lilás do metrô</li>
-		</ul>
+	<footer class="container grid grid-template-columns">
+		<div class="item">
+			<ul>
+				<h2>ATENDIMENTO</h2>
+				<li>Segunda à Sexta</li>
+				<li>Das 09h às 22h</li>
+				<li>Sábados</li>
+				<li>Das 10h às 15h</li>
+			</ul>
+		</div>
+		<div class="item">
+			<ul>
+				<h2>ENDEREÇO</h2>
+				<li>Elite - Academy of Dance</li>
+				<li>Rua Domingos de Moares, 763 - 3º Andar</li>
+				<li>Vila Mariana</li>
+				<li>Em frente a linha lilás do metrô</li>
+			</ul>
+		</div>
+		<div class="item">
+			<ul>
+				<h2>CONTATO</h2>
+				<li>(11) 3085-4677</li>
+				<li>(11) 95687-2559</li>
+				<li>contato@eliteacademy.com.br</li>
+			</ul>	
+		</div>	
 	</footer>
 </body>
 </html>

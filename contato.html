@@ -1,197 +1,181 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	
+	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<title>Elite - Academy of Dance</title>
-	
-	<style>
-		body {
-		  margin: 0;
-		  font-family: Tahoma, Helvetica, sans-serif;
-		}
 
-		.topnav {
-		  overflow: hidden;
-		  background-color: #333;
-		}
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/contato.css">
 
-		.topnav a {
-		  float: left;
-		  color: #f2f2f2;
-		  text-align: center;
-		  padding: 14px 16px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
+	<script>
+		function sampleFunction() {
+			let name = document.getElementById("nome").value
+			let email = document.getElementById("email").value
+			let end = document.getElementById("end").value
+			let cel = document.getElementById("cel").value
+			let modalidades = document.getElementById("modalidades").value
+			let periodo = document.getElementById("periodo").value
+			let idade = document.getElementById("idade").value
+			let nivel = document.getElementById("nivel").value
+			let comentario = document.getElementById("comentario").value
 
-		.topnav a:hover {
-		  background-color: #ddd;
-		  color: black;
-		}
+			var data = JSON.stringify({
+				"name": name,
+				"email": email,
+				"address": end,
+				"cellphone": cel,
+				"danceType": modalidades,
+				"schedule": periodo,
+				"age": parseInt(idade),
+				"level": nivel,
+				"comment": comentario
+			});
 
-		.topnav a.active {
-		  background-color: #e396f2;
-		  color: white;
-		}
+			var xhr = new XMLHttpRequest();
 
-		img {
-		  display: block;
-		  margin-left: auto;
-		  margin-right: auto;
-		}
+			xhr.addEventListener("readystatechange", function() {
+			if(this.readyState === 4) {
+				console.log(this.responseText);
+			}
+			});
 
-		p {
-		    text-align: justify;
-		    line-height: 25px;
-		    padding: 0 45px;
-		}
+			xhr.open("POST", "http://localhost:8080/saveContact");
+			xhr.setRequestHeader("Content-Type", "application/json");
 
-		h2 {
-    		padding: 0 45px;
-		}
+			xhr.send(data);			
 
-		.btn {
-			border: none;
-			color: white;
-			padding: 14px 28px;
-		 	font-size: 16px;
-		 	border-radius: 10px;
-		  	cursor: pointer;
+			document.getElementById("faleConoscoForm").submit();
+			alert("Agradecemos seu contato, em breve retornaremos!");
 		}
-
-		.info {
-			background-color: #cd91f0;
-		}
-
-		.info:hover {
-			background: #4d0278;
-		}
-
-		#faleConosco label {
-			font-size: 14pt;
-			font-weight: bold;
-			color: #6c07a5;
-			display: block;
-		}
-
-		#faleConosco input[type="submit"], #faleConosco input[type="reset"] {
-			border: none;
-			color: white;
-			padding: 14px 28px;
-			font-size: 16px;
-			border-radius: 10px;
-			cursor: pointer;
-			margin-top: 20px;
-		}
-
-	</style>
+	</script>
 </head>
 
 <body>
 	<header>
-		<div class="topnav">
-		  <a href="index.html">HOME</a>
-		  <a href="#estudio">O ESTÚDIO</a>
-		  <a href="#modalidades">MODALIDADES</a>
-		  <a href="#horarios">HORÁRIOS</a>
-		  <a href="#professores">PROFESSORES</a>
-		  <a class="active" href="#contato">FALE CONOSCO</a>
-		</div>
+		<nav id="topnav">
+			<a href="index.html">HOME</a>
+			<a href="#estudio">O ESTÚDIO</a>
+			<a href="modalidades.html">MODALIDADES</a>
+			<a href="#horarios">HORÁRIOS</a>
+			<a href="#professores">PROFESSORES</a>
+			<a id="active" href="#contato">FALE CONOSCO</a>
+		</nav>
 
 		<figure>
 			<img src="img/logo.png" alt="Logo da Elite Academy of Dance">
 		</figure>
 
-		<font color="#ffffff" face="Bradley Hand" align="center">
-			<div class="topnav">
-				<p><h1>Movimente o seu mundo!</h1></p>
-			</div>
-		</font>
+		<div id="topnav">
+			<h1 id="movimente">Movimente o seu mundo!</h1>
+		</div>
 	</header>
 
 	<article>
-
 		<br>
-		<font color="#b6b6b6">
-			<h4 align="center">Preencha o formulário abaixo ou envie um e-mail para: contato@eliteacademy.com.br</h2>
-		</font>
-
+		<h4>Preencha o formulário abaixo ou envie um e-mail para: contato@eliteacademy.com.br</h4>
 		<br>
 		<section id="faleConosco">
-			<form name="fContato" method="post" action="#">
-				<table border="0" width="100%" align="center" cellpadding="4" cellspacing="10">
-					<tr>
-						<td><font color="#6c07a5">Nome:</font></td>
-						<td><input type="text" maxlength="50" size="60" name="fNome" style="height: 30px"></td>
-						<td><font color="#6c07a5">Email:</font></td>
-						<td><input type="email" maxlength="50" size="60" name="fEmail" style="height: 30px"></td>
-					</tr>
-					<tr>
-						<td><font color="#6c07a5">Endereço:</font></td>
-						<td><input type="text" maxlength="50" size="60" name="fEnd" style="height: 30px"></td>
-						<td><font color="#6c07a5">Celular:</font></td>
-						<td><input type="cel" maxlength="15" size="60" name="fCel" style="height: 30px"></td>
-					</tr>
-					<tr>
-						<td><font color="#6c07a5">Modalidade de Interesse:</font></td>
-						<td><input type="text" maxlength="50" size="60" name="fRitmo" style="height: 30px"></td>
-						<td><font color="#6c07a5">Horário de Preferência:</font></td>
-						<td><input type="text" maxlength="50" size="60" name="fHorario" style="height: 30px"></td>
-					</tr>
-					<tr>
-						<td><font color="#6c07a5">Idade:</font></td>
-						<td><input type="text" maxlength="50" size="60" name="fIdade" style="height: 30px"></td>
-						<td><font color="#6c07a5">Nível:</font></td>
-						<td><input type="text" maxlength="50" size="60" name="fNivel" style="height: 30px"></td>
-					</tr>
-					<tr>
-						<td><font color="#6c07a5">Comentário:</font></td>
-						<td><input type="text" maxlength="500" size="60" name="fComentario" style="height: 200px"></td>
-						<td align="center" colspan="2">
-							<input type="submit" value="Enviar" class="btn info">
-							<input type="submit" value="Apagar" class="btn info">
-						</td>
-					</tr>
-				</table>
+			<form action="#" method="POST" id="faleConoscoForm">
+				<div>
+					<label for="nome">Nome:</label>
+					<input type="text" id="nome" name="contato_nome"/>
+				</div>
+				<div>
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="contato_email"/>
+				</div>
+				<div>
+					<label for="end">Endereço:</label>
+					<input type="text" id="end" name="contato_end"/>
+				</div>
+				<div>
+					<label for="cel">Celular:</label>
+					<input type="tel" id="cel" name="contato_cel" pattern="[0-9]{11}" title="Insira seu número de celular com DDD"/>
+				</div>
+				<div>
+					<label for="modalidades">Modalidade:</label>
+					<select id="modalidades" name="contato_modalidades">
+						<option value="selecione">Selecione</option>
+						<option value="ballet">Ballet</option>
+						<option value="contemporaneo">Contemporâneo</option>
+						<option value="indiana">Dança Indiana</option>
+						<option value="tribal">Dança Tribal</option>
+						<option value="danca_ventre">Dança do Ventre</option>
+						<option value="flamenco">Flamenco</option>
+						<option value="forro">Forró</option>
+						<option value="jazz">Jazz</option>
+						<option value="samba_rock">Samba Rock</option>
+						<option value="sapateado">Sapateado</option>
+						<option value="sertanejo">Sertanejo</option>
+						<option value="street">Street Dance</option>
+						<option value="tango">Tango</option>
+						<option value="zouk">Zouk</option>
+						<option value="zumba">Zumba</option>
+					</select>
+				</div>
+				<div>
+					<label for="periodo">Período:</label>
+					<select id="periodo" name="contato_periodo">
+						<option value="selecione">Selecione</option>
+						<option value="manha">Manhã</option>
+						<option value="tarde">Tarde</option>
+						<option value="noite">Noite</option>
+						<option value="integral">Integral</option>
+						<option value="sabado">Sábado</option>
+					</select>
+				</div>
+				<div>
+					<label for="idade">Idade:</label>
+					<input type="text" id="idade" name="contato_idade"/>
+				</div>
+				<div>
+					<label for="nivel">Nível:</label>
+					<select id="nivel" name="contato_nivel">
+						<option value="selecione">Selecione</option>
+						<option value="iniciante">Iniciante</option>
+						<option value="intermediario">Intermediário</option>
+						<option value="avancado">Avançado</option>
+					</select>
+				</div>
+				<div>
+					<label for="cometario">Comentário:</label>
+					<textarea id="comentario"></textarea>
+				</div>
+				<div id="btn">
+					<button type="submit" onclick="sampleFunction()">Enviar</button>
+					<button type="reset">Apagar</button>
+				</div>
 			</form>
-			<br>
-			<br>
-			<hr>
 		</section>
 	</article>
 
-	<footer>
-		<font size="2">
+	<footer class="container grid grid-template-columns">
+		<div class="item">
 			<ul>
-				<table width="100%" align="center">
-		        	<tr>
-		                <th><h2><font color="#6c07a5">ATENDIMENTO</font></h2></th>
-		                <th><h2><font color="#6c07a5">ENDEREÇO</font></h2></th>
-		                <th><h2><font color="#6c07a5">CONTATO</font></h2></th>
-		            </tr>
-		            <tr align="center">
-		            	<td>Segunda à Sexta</td>
-		            	<td>Elite - Academy of Dance</td>
-		            	<td>(11) 3085-4677</td>
-		            </tr>
-		            <tr align="center">
-		            	<td>Das 09h às 22h</td>
-		            	<td>Rua Domingos de Moares, 763 - 3º Andar</td>
-		            	<td>(11) 95687-2559</td>
-		            </tr>
-		            <tr align="center">
-		                <td>Sábados</td>
-		                <td>Vila Mariana</td>
-		                <td>contato@eliteacademy.com.br</td>
-		            </tr>
-		            <tr align="center">
-		                <td>Das 10h às 15h</td>
-		                <td>Em frente a linha lilás do metrô</td>
-		            </tr>
-	        	</table>
-	        </ul>
-        </font>
+				<h2>ATENDIMENTO</h2>
+				<li>Segunda à Sexta</li>
+				<li>Das 09h às 22h</li>
+				<li>Sábados</li>
+				<li>Das 10h às 15h</li>
+			</ul>
+		</div>
+		<div class="item">
+			<ul>
+				<h2>ENDEREÇO</h2>
+				<li>Elite - Academy of Dance</li>
+				<li>Rua Domingos de Moares, 763 - 3º Andar</li>
+				<li>Vila Mariana</li>
+				<li>Em frente a linha lilás do metrô</li>
+			</ul>
+		</div>
+		<div class="item">
+			<ul>
+				<h2>CONTATO</h2>
+				<li>(11) 3085-4677</li>
+				<li>(11) 95687-2559</li>
+				<li>contato@eliteacademy.com.br</li>
+			</ul>	
+		</div>	
 	</footer>
 </body>
 </html>
