@@ -90,6 +90,12 @@ hr {
     border-radius: 10px;
     cursor: pointer;
     background-color: #cd91f0;
+    font-family: 'Dosis', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 #btn:hover {
