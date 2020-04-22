@@ -45,6 +45,8 @@ These guidelines aims to instruct on how to have the project up and running on y
 
 ## Demo
 
+You can see a demo on YouTube:
+
 [![Click here to see on YouTube](http://img.youtube.com/vi/f3Aqee8Ba1Q/0.jpg)](http://www.youtube.com/watch?v=f3Aqee8Ba1Q "")
 
 ## Website screenshots
