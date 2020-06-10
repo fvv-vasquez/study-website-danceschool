@@ -9,7 +9,7 @@ app.appendChild(container);
 var request = new XMLHttpRequest();
 
 // Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'http://localhost:8080/dance-types', true);
+request.open('GET', 'https://api-dance-school.herokuapp.com/dance-types', true);
 
 request.onload = function () {
 

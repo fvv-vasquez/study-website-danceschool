@@ -128,7 +128,7 @@ a {
 	display: grid;
 }
 
-@media (max-width: 320px) {
+@media screen and (max-width: 320px) {
 
     img {
         display: block;
@@ -191,5 +191,65 @@ a {
 
     .grid-template-columns {
         grid-template-columns: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width:40%;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: medium;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+
+    nav a {
+        font-size: 0.8em;
+    }
+
+    #estudio {
+        width: 30%;
+        height: 30%;
+    }
+
+    #mod {
+        float: inherit;
+        width: 58%;
+        height: 32%;
+    }
+
+    #movimente {
+        font-size: 1.2em;
+    }
+
+    #btn {
+        display: block;
+        margin: auto;
+        font-size: 1em;
+    }
+
+    #modalidades {
+        list-style: inside;
+        padding: 10px;
+        font-size: 1em;
+        max-width: 100%;
+        grid-template-columns: 33% 33% 33%;
+        align-items: baseline;
+        line-height: 25px;
+        margin-left: 10%;
+        margin-top: 0%;
+        padding: 0px;
     }
 }
